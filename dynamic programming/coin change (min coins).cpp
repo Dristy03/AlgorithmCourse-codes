@@ -85,6 +85,31 @@ int main()
 
         cout<<dp[n-1][w]<<endl;
 
+        i=n-1;
+        j=w;
+
+        vector<int>v;
+
+        while(j>0)
+        {
+            if(dp[i][j]!=dp[i-1][j])
+            {
+                v.pb(coins[i]);
+                j=j-coins[i];
+
+            }
+            else
+            {
+                i--;
+            }
+        }
+
+        for(auto x: v)
+        {
+            cout<<x<<" ";
+        }
+
+
 
 
     }
